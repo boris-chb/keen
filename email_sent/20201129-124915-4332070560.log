@@ -1,0 +1,18 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: boris@keen.ie
+Date: Sun, 29 Nov 2020 12:49:15 -0000
+Message-ID: <160665415530.79929.5464286406244987544@13.1.168.192.in-addr.arpa>
+
+A password reset request was made for "boris@keen.ie". If that wasn't you, please ignore this message.
+
+Follow the link below to reset your password:
+
+http://127.0.0.1:8000/accounts/reset/MQ/ae3nm3-b21df55de5e7c16f191b06d8fe7f253d/
+
+Your username, in case you don't remember it: boris
+
+-------------------------------------------------------------------------------
