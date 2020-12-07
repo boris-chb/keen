@@ -207,6 +207,7 @@ p.description {
 }
 
 #main {
+    padding-top: 3rem;
     float:left;
     width: 96%;
     margin-right:-220px; 
