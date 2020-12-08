@@ -81,14 +81,9 @@
                     <!-- Cart -->
                     <li class="nav-item">
                         {% with total_items=cart|length %}
-                        <a href="#" class="nav-link">
+                        <a href="{% url 'cart:cart_detail' %}" class="nav-link">
                         <i class="fas fa-shopping-cart"></i> Cart
-                        {% if total_items > 0 %} 
-                          <a href="{% url 'cart:cart_detail' %}" class="nav-link">
-                            ({{ total_items }})${{ cart.get_total_price }}
-                          </a>
-                        {% else %}(0)</a>
-                        {% endif %}
+                        {% if total_items > 0 %}({{ total_items }}){% else %}(0)</a>{% endif %}
                         {%endwith %}
                     </li>
                 </ul>

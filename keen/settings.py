@@ -38,12 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_countries',
     'accounts',
     'shop',
     'cart',
     'orders',
+    
+    # Third part apps
     'crispy_forms',
+    'django_countries',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -138,7 +141,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-CRISPY_TEMPLATE_PACK = 'uni_form'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
@@ -146,3 +149,6 @@ LOGOUT_REDIRECT_URL = '/'
 # SMTP
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = str(BASE_DIR.joinpath('email_sent'))
+
+# CART SETTINGS
+CART_SESSION_ID = 'cart' # Used to store Cart object in user session

@@ -11,9 +11,10 @@ class Category(models.Model):
         ('men', 'Men'),
         ('women', 'Women'),
     )
+    
     name = models.CharField(max_length=200, db_index=True)
     slug = models.SlugField(max_length=200, unique=True)
-    gender = models.CharField(max_length=5, choices=GENDER_CHOICES, default='men')
+    gender = models.CharField(max_length=5, choices=GENDER_CHOICES, default='Men')
 
     class Meta:
         ordering = ('name',)

@@ -17,6 +17,7 @@ a {
 
 a:hover {
     color:#77b6e2;
+    text-decoration: none;
 }
 
 
@@ -28,10 +29,6 @@ a.button, input[type="submit"] {
     margin: 10px 0 10px;
     font-size:14px;
     border:0;
-}
-
-input[type="submit"]:hover {
-    background-color: #6ea9cf;
 }
 
 a.button.light {
@@ -207,8 +204,8 @@ p.description {
 }
 
 #main {
-    padding-top: 3rem;
-    float:left;
+    padding-top: 4rem;
+    float: left;
     width: 96%;
     margin-right:-220px; 
     overflow:hidden;
@@ -228,6 +225,7 @@ p.description {
 }
 
 .product-detail {
+    margin-top: 4rem;
     text-align:justify;
 }
 
@@ -238,7 +236,7 @@ p.description {
 }
 
 .product-detail img {
-    width:40%;
+    width:30%;
     float:left;
     padding:0 20px 20px 0;
 }
