@@ -67,7 +67,7 @@ class Product(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     size = models.CharField(max_length=4, choices=SIZE_CHOICES, default='8')
-    quantity = models.IntegerField(default=1)
+    quantity = models.PositiveIntegerField(default=1)
     
     class Meta:
         ordering = ('name', 'created', 'available',)
