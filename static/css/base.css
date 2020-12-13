@@ -13,11 +13,11 @@ h1, h2, h3, h4, h5 , h6 {
 
 a {
     text-decoration:none;
-    color:#5993bb;
+    color:#532e1c;
 }
 
 a:hover {
-    color:#77b6e2;
+    color:#6b412c;
     text-decoration: none;
 }
 
@@ -39,6 +39,10 @@ a.button, input[type="submit"] {
     border:0;
 }
 
+a.button, input[type="submit"]:hover {
+    background-color: #6b412c;
+}
+
 a.button.light {
     color:#666;
     background:#c5a880;
@@ -49,8 +53,13 @@ a.button.light:hover {
     text-decoration: none;
 }
 
-#id_quantity {
-    width: 30%;
+input[type="number"] {
+    width: 10%;
+}
+
+#id_size {
+    width: 10%;
+    padding: 10px;
 }
 
 a.button:hover {
@@ -130,15 +139,6 @@ form p input {
     border-radius:4px;
 }
 
-ul.errorlist {
-   float:left;
-   color:#ff0000;
-   clear:both;
-   font-size:13px;
-   margin:0; 
-   padding:0;
-}
-
 select[id="id_quantity"] {
     margin: 10px;
 }
@@ -151,17 +151,14 @@ p.description {
     font-size: 20px;
 }
 
+#auth-form {
+    width: 40%;
+    margin-left: 20rem;
+}
 
 #header {
     padding:10px 100px;
     font-size:18px;
-    overflow:auto;
-}
-
-#subheader {
-    background:#ececec;
-    color:#444;
-    padding:15px 100px;
     overflow:auto;
 }
 
@@ -170,7 +167,7 @@ p.description {
     text-decoration: none;
     float:left;
     color:#333;
-    font-size:26px;
+    font-size: 28px;
     margin-right:10%;
 }
 
@@ -266,30 +263,6 @@ p.description {
     color:#dc1616;
 }
 
-.languages {
-   float:right;
-   padding-top:4px;
-   font-size:14px;
-}
-
-.languages ul {
-    list-style:none;
-    margin:0;
-    padding:0;
-    float:left;
-}
-
-.languages ul li {
-    float:left;
-    margin:0 0 0 10px;
-    font-size:14px;
-}
-
-.languages p {
-    float:left;
-    margin:0;
-}
-
 .recommendations {
     clear:both;
 }
@@ -322,18 +295,4 @@ p.description {
 
 .recommendations.cart img {
     width:120px;
-}
-
-/* braintree hosted fields */
-form div.field {
-    font-size:13px;
-    color:#666;
-    width:300px;
-    height:22px;
-    margin-bottom:10px;
-    padding:6px 12px;
-    border:0;
-    background:#efefef;
-    color:#666;
-    border-radius:4px;
 }

@@ -70,7 +70,7 @@ class Cart:
             item['total_price'] = item['price'] * item['quantity']
             yield item
     
-    
+
     def __len__(self):
         """
         Return the number of items in the cart

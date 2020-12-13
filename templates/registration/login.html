@@ -5,16 +5,16 @@
 {% block title %}Log-in{% endblock title %}
 
 {% block content %}
-<div style="width: 30%; margin-top: 3rem;">
-  <h2>Log In</h2>
-  <form class="uniForm" method="post">
+<div id='main'>
+  <form class="uniForm" id='auth-form' method="post">
+    <h2>Log In</h2>
     {% csrf_token %}
     {{ form|crispy }}
     <button class="btn btn-dark" type="submit">Log In</button>
-  </form></br>
-  <p>
-    Forgot your password?</br>
-    <a href="{% url 'password_reset' %}">Reset it.</a>
-  </p>
+    <p><br>
+      Forgot your password? <a href="{% url 'password_reset' %}">Reset it.</a><br>
+      Not registered? Sign up <a href="{% url 'accounts:signup' %}">Here</a>.
+    </p>
+  </form>
 </div>
 {% endblock content %}
