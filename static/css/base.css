@@ -1,13 +1,14 @@
-@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 body { 
     margin:0;
     padding:0;
-    font-family:helvetica, sans-serif; 
+    font-family: 'Roboto', sans-serif;
 }
 
 h1, h2, h3, h4, h5 , h6 { 
-    font-family: 'Ubuntu', sans-serif; font-weight:normal;
+    font-family: 'Roboto', sans-serif;
+    font-weight:normal;
 }
 
 a {
@@ -20,10 +21,17 @@ a:hover {
     text-decoration: none;
 }
 
+hr {
+    border-style: none;
+    border-top-style: dotted;
+    border-width: 5px;
+    border-color: #532e1c;
+    width: 5%;
+}
 
 a.button, input[type="submit"] {
     color:#fff;
-    background:#5993bb;
+    background:#532e1c;
     border-radius:4px;
     padding:10px 20px;
     margin: 10px 0 10px;
@@ -33,16 +41,20 @@ a.button, input[type="submit"] {
 
 a.button.light {
     color:#666;
-    background:#c8e6f3;
+    background:#c5a880;
 }
 
 a.button.light:hover {
-    background-color: #e2ebf0;
+    background-color: #d8bb93;
+    text-decoration: none;
 }
 
+#id_quantity {
+    width: 30%;
+}
 
 a.button:hover {
-    background-color: #77b6e2;
+    background-color: #c5a880;
 }
 
 .text-left {
@@ -75,7 +87,7 @@ tbody tr.subtotal {
 }
 
 thead th, tbody tr.total {
-    background:#5993bb;
+    background:#343a40;
     color:#fff;
     font-weight:bold;
 }
@@ -140,7 +152,6 @@ p.description {
 }
 
 
-
 #header {
     padding:10px 100px;
     font-size:18px;
@@ -155,7 +166,7 @@ p.description {
 }
 
 #header .logo {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-decoration: none;
     float:left;
     color:#333;
@@ -173,38 +184,8 @@ p.description {
     overflow:hidden;
 }
 
-#navbar {
-    width:220px;
-    padding:30px 20px 0 0;
-    float:left;
-}
-
-#navbar ul{
-    margin:0;
-    padding:0;
-}
-
-#navbar ul li {
-    margin:0;
-    list-style:none;
-    padding:10px 14px;
-}
-
-#navbar ul li a {
-    display:block;
-}
-
-#navbar ul li.selected {
-    background:#5993bb;
-    border-radius:4px;
-}
-
-#navbar ul li.selected a {
-    color:#fff;
-}
-
 #main {
-    padding-top: 4rem;
+    padding-top: 3rem;
     float: left;
     width: 96%;
     margin-right:-220px; 
@@ -263,7 +244,7 @@ p.description {
 }
 
 .order-info h3 {
-    color:#5993bb;
+    color:#532e1c;
 }
 
 .order-info ul li {

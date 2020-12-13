@@ -13,7 +13,7 @@ class Cart:
             cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
     
-    def add(self, product, size, quantity=1, override_quantity=False):
+    def add(self, product, quantity=1, override_quantity=False):
         """
         Add or update product quantity
         * Using product_id as key to make sure same product isn't added twice.
@@ -22,20 +22,16 @@ class Cart:
         product_id = str(product.id)
         if product_id not in self.cart:
             self.cart[product_id] = {'quantity': 0,
-                                     'size': size, #TODO
                                      'price': str(product.price)}
-            if override_quantity:
-                diff = self.cart[product_id]['quantity'] - quantity
-                self.cart[product_id]['quantity'] = quantity
-                product.quantity -= diff
-            else:
-                self.cart[product_id]['quantity'] += quantity
-                product.quantity -= quantity
-            product.save()
+        if override_quantity:
+            self.cart[product_id]['quantity'] = quantity
+        else:
+            self.cart[product_id]['quantity'] += quantity
+        self.save()
             
     def save(self):
         # Marked as modified to make sure changes are made
-        request.session.modified = True
+        self.session.modified = True
     
     def remove(self, product):
         product_id = str(product.id)

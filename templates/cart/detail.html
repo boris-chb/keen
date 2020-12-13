@@ -3,8 +3,10 @@
 {% block title %}Your shopping cart{% endblock %}
  
 {% block content %}
+<div id='main'>
 <h1>Products</h1>
 
+{% if cart|length > 0 %}
 <!-- Cart -->
 <table class="cart">
     <thead>
@@ -31,22 +33,21 @@
                 <form action="{% url 'cart:cart_add' product.id %}" method="POST">
                     {{ item.update_quantity_form.quantity }}
                     {{ item.update_quantity_form.override }}
-                    <input type="submit" value="Update">
+                    <input type="submit" class='btn-success' value="Update">
                     {% csrf_token %}
                 </form>
             </td>
-            <!-- <td>{% comment %}  -->
+            <td>
                 <form action="{% url 'cart:cart_remove' product.id %}"method="post">
-                    <input type="submit" value="Remove">
+                    <input type="submit" class='btn-danger' value="Remove">
                     {% csrf_token %}
-                <!-- </form> {% endcomment %} -->
+                </form>
             </td>
             <td class="num">${{ item.price }}</td>
             <td class="num">${{ item.total_price }}</td>
         </tr>
         {% endwith %}
         {% endfor %}
-
         <tr class="total">
             <td>Total</td>
             <td colspan="4"></td>
@@ -54,8 +55,14 @@
         </tr>
     </tbody>
 </table>
-{% comment %}<p class="text-right">
-    <a href="{% url 'shop:product_list' %}" class="button light">Continue shopping</a>
+
+{% else %}
+    <h3>Your cart is empty.</h3>
+{% endif %}
+<!-- END CART -->
+<p class="text-right">
+    <a href="{% url 'shop:product_list' %}" class="button light">Continue shopping</a>{% comment %}
     <a href="{% url 'orders:order_create' %}" class="button">Checkout</a>
 </p> {% endcomment %}
+</div>
 {% endblock content %}
