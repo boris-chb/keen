@@ -26,7 +26,6 @@ urlpatterns = [
     path('', include('shop.urls', namespace='shop')),
     path('accounts/', include('accounts.urls', namespace='accounts')),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('search/', include('search.urls')),
 ]
 
 if settings.DEBUG:
