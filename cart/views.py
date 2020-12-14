@@ -3,6 +3,8 @@ from django.views.decorators.http import require_POST
 from shop.models import Product
 from .cart import Cart
 from .forms import CartAddProductForm
+from django.conf import Settings
+import stripe
 
 @require_POST
 def cart_add(request, product_id):
@@ -33,4 +35,27 @@ def cart_detail(request):
                      'override': True}
         item['update_quantity_form'] = CartAddProductForm(initial=form_data)
     context = {'cart': cart}
-    return render(request, 'cart/detail.html', context)
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+    stripe_total = int(total * 100)
+    description = 'Online Shop - New order'
+    data_key = settings.STRIPE_PUBLISHABLE_KEY
+    return render(request, 'cart/detail.html', context {'total':total,'data_key':data_key, 'stripe_total':stripe_total,
+                                                        'description':description})
+    if request.method == 'POST':
+        print(request.POST)
+        try:
+            token = request.POST['stripeToken']
+            email = request.POST['stripeEmail']
+
+            customer = stripe.Customer.create(
+                        email=email,
+                        source = token
+            )
+            charge = stripe.Charge.create(
+                        amount=stripe_total
+                        currency="eur"
+                        description=description
+                        customer=customer.id
+            )
+        except stripe.error.CardError as e:
+            return false, e

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'shop',
     'cart',
     'orders',
+    'stripe',
     
     # Third-party apps
     'crispy_forms',
@@ -153,3 +154,7 @@ EMAIL_FILE_PATH = str(BASE_DIR.joinpath('email_sent'))
 
 # CART SETTINGS
 CART_SESSION_ID = 'cart' # Used to store Cart object in user session
+
+# STRIPE PAYMENT
+STRIPE_SECRET_KEY = '<sk_test_51Hy6c4EgrcHTUKw77ZXj3eiXYEAD0bcaYPbKThQCJ2f95zZCU9k9yHAOLAZ4I7OuP3FuOhwrbGsR0uB5LzGAew3x00k8m0Aq9h>'
+STRIPE_PUBLISHABLE_KEY = '<pk_test_51Hy6c4EgrcHTUKw7V7EkjrBx6sHGRxU7IZCO2rX6l11qd2AXKuuUz1MYQDL7wP0Snn4FCoPVYzKa6kBxiY17BKRV00J4Rg4SfM>'
