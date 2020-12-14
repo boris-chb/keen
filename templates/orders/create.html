@@ -14,12 +14,24 @@
           </li>
           {% endfor %}
       </ul>
-      <p>Total: &euro;{{ cart.get_total_price }}</p>
+      <p>Total: ${{ cart.get_total_price }}</p>
   </div>
   <form method="post" class="order-form">
       {{ form|crispy }}
-      <p><input type="submit" value="Place order" /></p>
-      {% csrf_token %}
+      <form action="" method="POST">
+        {% csrf_token %}
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="{{ data_key }}"
+                 data-amount="{{ stripe_total }}"
+                 data-name="keen"
+                 data-description="{{ description }}"
+                 data-locale="auto"
+                 data-currency="eur"
+                 data-shipping-address="true"
+                 data-billing-address="true"
+                 data-zip-code="true">
+             </script>
+        </form>
   </form>
 </div>
 {% endblock %}

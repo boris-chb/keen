@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Category, Product
 from cart.forms import CartAddProductForm
+from .recommend import Recommendations
 
 def product_list(request, category_slug=None):
     category = None
@@ -12,10 +13,16 @@ def product_list(request, category_slug=None):
     context = {'category': category, 'categories': categories, 'products': products}
     return render(request, 'shop/product/list.html', context)
 
+
+
 def product_detail(request, id, slug):
     # Retrieve the slug to create URLs based on it
     product = get_object_or_404(Product, id=id, slug=slug, available=True)
     cart_product_form = CartAddProductForm()
-    context = {'product': product, 'cart_product_form': cart_product_form}
+    r = Recommendations()
+    recommendet_products = r.suggest_products_for([product], 4)
+    
+    context = {'product': product, 'cart_product_form': cart_product_form,
+               'recommended_products': recommendet_products}
+    
     return render(request, 'shop/product/detail.html', context)
-
