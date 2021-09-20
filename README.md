@@ -1,4 +1,8 @@
 # keen
+
+![image](https://user-images.githubusercontent.com/47457848/133989155-0cc45c0c-8a76-47e0-b105-34aa5cc46623.png)
+
+Online shop built using Django and Python.
 <hr>
 <h1>Dependencies</h1>
 <ul>
